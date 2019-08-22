@@ -1,27 +1,59 @@
-# AngLoader
+## ang-loader
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0.
+ang-loader is a lightweight plug-and-play loader library based on Angular 7.
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```bash
+npm install ang-loader
+```
 
-## Code scaffolding
+## Usage
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Import ```AngLoaderModule``` in your application module
 
-## Build
+```
+import { AngLoaderModule } from 'ang-loader';
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+@NgModule({
+  imports: [
+    AngLoaderModule
+  ]
+});
+```
+Add the ```ang-loader``` child component to your component
 
-## Running unit tests
+```
+<ang-loader></ang-loader>
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Import ```AngLoaderService``` in your component
 
-## Running end-to-end tests
+```
+import { AngLoaderService } from 'ang-loader';
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+export class AppComponen {
 
-## Further help
+  constructor(private loader: AngLoaderService) {}
+}
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+To show loader, simply call the ```AngLoaderService``` function show()
+
+```
+this.loader.show();
+``` 
+
+To hide loader, simply call the ```AngLoaderService``` function hide()
+
+```
+this.loader.hide();
+``` 
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+MIT License.
