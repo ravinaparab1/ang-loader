@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ang-loader": [
+        "dist/ang-loader"
+      ],
+      "ang-loader/*": [
+        "dist/ang-loader/*"
+      ]
+    }
   }
 }
